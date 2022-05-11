@@ -1,38 +1,95 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  margin-left: 5rem;
+  color: midnightblue;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+  background-color: rgb(149, 149, 194);
+  padding: 0.1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search {
+  margin-right: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  border: 2px solid midnightblue;
+  border-radius: 0.3em;
+  padding: 0.5rem 1.5rem;
+}
+
+.search:focus {
+  outline: 0;
+}
+
+.movie {
+  background-color: rgb(149, 149, 194);
+  width: 18.75rem;
+  margin: 1rem;
+  border-radius: 1em;
+  position: relative;
+  /* TO HIDE THE OVERVIEW */
+  overflow: hidden;
+}
+
+.movie img {
+  max-width: 100%;
+  border-radius: 1em;
+  height: 29rem;
+  object-fit: cover;
+}
+
+.movie-info {
+  display: flex;
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movie-info h3 {
+  margin: 0;
+}
+
+.movie-overview {
+  background-color: rgb(149, 149, 194);
+  padding: 1rem;
+  /* for HIDDING THE OVERVIEW */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  max-height: 90%;
+  transform: translateY(100%);
+  transition: 0.7s ease;
+}
+
+.movie:hover .movie-overview {
+  transform: translateY(0%);
+}
+
+.tag {
+  background-color: rgb(16, 16, 112);
+  padding: 0.5rem;
+  border-radius: 0.3125rem;
+  font-weight: bold;
+}
+
+.tag.green {
+  color: green;
+}
+.tag.yellow {
+  color: yellow;
+}
+.tag.red {
+  color: red;
 }
